@@ -1,0 +1,36 @@
+
+CREATE TABLE blacklist (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    websiteUrl VARCHAR(255) NOT NULL,
+    vote INT(50) 
+);
+
+
+CREATE TABLE website (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    websiteUrl VARCHAR(255) NOT NULL,
+    vote INT(50) default '0'
+);
+
+
+CREATE TABLE users (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE admins (
+	id INT NOT NULL PRIMARY KEY,
+	username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+
+
+CREATE TABLE feedback (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    userfeedback VARCHAR(500) NOT NULL
+);
